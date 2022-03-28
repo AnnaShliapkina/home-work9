@@ -1,0 +1,302 @@
+.backdrop {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+
+  overflow-y: scroll;
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  @media screen and (max-width: 767px) {
+    padding: 92px 15px;
+  }
+}
+
+.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+}
+
+.modal {
+  padding: 40px;
+
+  background-color: $primary-white-color;
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  opacity: 1;
+  @media screen and (max-width: 479px) {
+    width: calc(100%-30px);
+  }
+
+  @media screen and (max-width: 768px) {
+    width: 450px;
+    position: absolute;
+
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  @media screen and (min-width: 767px) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+
+    width: 450px;
+  }
+
+  @media screen and (min-width: 1200px) {
+    min-width: 528px;
+  }
+}
+
+.modal__button {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: $primary-white-color;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+.modal__vector {
+  fill: $primary-black-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  &:focus,
+  &:hover {
+    fill: $hover-button-color;
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__text {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: calc(23 / 20);
+  text-align: center;
+  letter-spacing: 0.03em;
+
+  color: $title-text-color;
+}
+
+.form__list {
+  margin-top: 12px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 4px;
+
+  font-weight: 400;
+  font-size: 12px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.01em;
+
+  color: $primary-text-color;
+}
+
+.form__item + .form__item {
+  margin-top: 10px;
+}
+
+.form__box {
+  position: relative;
+  width: 100%;
+  margin-top: 4px;
+}
+
+.form__input {
+  display: block;
+  width: 100%;
+  padding-left: 42px;
+
+  height: 40px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  border-radius: 4px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+  outline: none;
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover + .form__icon,
+  &:focus + .form__icon {
+    fill: var$hover-button-color;
+  }
+
+  &:focus,
+  &:hover {
+    border: 1px solid $hover-button-color;
+  }
+}
+
+.form__icon {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 14px;
+
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.form__textarea {
+  width: 100%;
+  height: 120px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+
+  border-radius: 4px;
+  padding: 12px 16px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: calc(14 / 12);
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+
+  outline: none;
+
+  transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover,
+  &:focus {
+    border: 1px solid $hover-button-color;
+  }
+
+  &::placeholder {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14 / 12);
+    letter-spacing: 0.01em;
+
+    color: rgba(117, 117, 117, 0.5);
+  }
+}
+
+.form__comment {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-top: 10px;
+}
+
+.checkbox {
+  margin-top: 20px;
+}
+
+.checkbox__label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  letter-spacing: 0.03em;
+  color: $primary-text-color;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
+}
+
+.checkbox__agreement {
+  font-weight: 400;
+
+  @media screen and (max-width: 1199px) {
+    font-size: 12px;
+    line-height: calc(14 / 12);
+  }
+
+  @media screen and (min-width: 1200px) {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+  }
+
+  letter-spacing: 0.03em;
+  text-decoration-line: underline;
+  color: $hover-button-color;
+  margin-left: 4px;
+}
+
+.btn-form {
+  padding: 10px 55px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  @extend %button;
+
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-form:focus,
+.btn-form:hover {
+  background-color: #188ce8;
+}
+
+.checkbox__input {
+  @extend %visually-hidden;
+}
+
+.checkbox-box {
+  position: relative;
+}
+
+.checkbox__icon--checked {
+  border: 2px solid $title-text-color;
+  border-radius: 4px;
+  fill: transparent;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox__policy {
+  margin-left: 9px;
+}
+
+.checkbox__input:checked + .checkbox__icon--checked {
+  background-color: $hover-button-color;
+  border-color: $hover-button-color;
+  fill: $primary-white-color;
+}
+
+.checkbox__input:focus-visible + .checkbox__icon--checked {
+  border-color: $hover-button-color;
+}

@@ -1,0 +1,126 @@
+.section--grey-color {
+  background-color: $primary-light-color-button;
+  @media screen and (max-width: 1199px) {
+    padding-bottom: 60px;
+  }
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 94px;
+  }
+}
+
+.community__item {
+  margin-top: 30px;
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.community {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+  @media screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
+}
+
+.community__item {
+  & + & {
+    margin-top: 30px;
+    @media screen and (min-width: 1200px) {
+      margin-top: 0;
+    }
+  }
+  @media screen and (min-width: 1200px) {
+    width: calc((100%-30px) / 2);
+  }
+}
+
+.community__image {
+  width: 100%;
+}
+
+.community__container {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 0px 0px 4px 4px;
+  background-color: $primary-white-color;
+}
+
+.community__title {
+  margin-bottom: 10px;
+  color: $title-text-color;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.community__text {
+  margin-bottom: 16px;
+
+  color: $primary-text-color;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: 0.03em;
+}
+
+.social__icon {
+  fill: $primary-icon-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social__link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover .social__icon,
+  &:focus .social__icon {
+    fill: $primary-white-color;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: $hover-button-color;
+  }
+}
+
+.social__icon {
+  fill: $primary-icon-color;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social {
+  display: flex;
+  justify-content: center;
+}
+
+.social__link {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: $primary-white-color-10;
+  /* margin-right: 10px; */
+}
+.social__item {
+  margin-right: 10px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}

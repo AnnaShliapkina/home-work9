@@ -1,0 +1,95 @@
+.section-opportunities {
+  padding-top: 60px;
+  padding-bottom: 60px;
+
+  @media screen and (min-width: 1200px) {
+    padding-top: 94px;
+    padding-bottom: 0;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .opportunities {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+      flex-basis: calc((100% - 2 * 15px) / 2);
+    }
+  }
+  .opportunities__item:nth-child(1) {
+    margin-bottom: 30px;
+  }
+  .opportunities__item:nth-child(2n + 1) {
+    margin-right: 30px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .opportunities {
+    display: flex;
+    flex-wrap: nowrap;
+
+    &__item {
+      flex-basis: calc((100% - 2 * 15px) / 2);
+    }
+    &__item:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+}
+
+.hidden {
+  @extend %visually-hidden;
+}
+
+.opportunities__item {
+  @media screen and (max-width: 767px) {
+    margin-bottom: 30px;
+  }
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  text-align: center;
+}
+
+.opportunities__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: $primary-light-color-button;
+  margin-bottom: 30px;
+  border-radius: 4px;
+}
+
+.opportunities__icon {
+  box-sizing: content-box;
+  width: 100%;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
+
+.opportunities__title {
+  margin-bottom: 10px;
+  color: $title-text-color;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.2;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  @media screen and (min-width: 768px) {
+    text-align: left;
+  }
+}
+
+.opportunities__text {
+  color: $primary-text-color;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+  margin-top: 10px;
+  text-align: left;
+}
